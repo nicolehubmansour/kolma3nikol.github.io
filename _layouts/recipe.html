@@ -1,0 +1,31 @@
+---
+layout: default
+title: {{ page.title }}
+---
+
+<article class="mb-5">
+  <h2>{{ page.title }}</h2>
+
+  {% if page.summary %}
+  <div class="recipe-summary">
+    {{ page.summary }}
+  </div>
+  {% endif %}
+
+  {% if page.image %}
+  <img src="{{ page.image | relative_url }}" class="img-fluid mb-3" alt="{{ page.title }}">
+  {% endif %}
+
+  <div class="recipe-details">
+    {{ content }}
+  </div>
+
+  {% if page.video %}
+  <div class="mt-4">
+    <video controls class="w-100">
+      <source src="{{ page.video | relative_url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  {% endif %}
+</article>
