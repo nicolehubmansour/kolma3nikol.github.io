@@ -1,0 +1,23 @@
+---
+layout: default
+title: Home
+---
+
+<h2>Latest Recipes</h2>
+<div class="row">
+  {% for recipe in site.recipes limit:6 %}
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      {% if recipe.image %}
+      <img src="{{ recipe.image | relative_url }}" class="card-img-top" alt="{{ recipe.title }}">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="{{ recipe.url | relative_url }}">{{ recipe.title }}</a>
+        </h5>
+        <p class="card-text recipe-summary">{{ recipe.excerpt }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

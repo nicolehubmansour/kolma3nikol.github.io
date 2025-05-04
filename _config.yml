@@ -1,0 +1,12 @@
+title: "My Recipe Journal"              # Site title shown in browser/tab and headers
+description: "A collection of my favorite recipes"  # Used by SEO plugins and metadata
+baseurl: ""                             # Leave empty if deploying to root of GitHub Pages
+url: "https://nicolehubmansour.github.io/kolma3nikol.github.io/"  # Replace with your actual GitHub Pages URL
+markdown: kramdown                     # Default and recommended Markdown processor
+theme: minima                          # Optional (you can omit if you fully style it yourself)
+plugins:
+  - jekyll-feed                        # Adds RSS feed functionality
+collections:
+  recipes:
+    output: true                       # Required to generate HTML pages
+    permalink: /recipes/:name/         # Clean URL for recipe pages
