@@ -1,28 +1,94 @@
-/* Custom minimal + fun accent styles */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
 :root {
-  --accent: #FF6F61;
+  --accent-primary: #FF6F61;
+  --accent-secondary: #F7CAC9;
   --bg: #FFFFFF;
   --text: #333333;
+  --muted: #555555;
 }
+
 body {
-  font-family: "Arial", sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
 }
+
 a {
-  color: var(--accent);
+  color: var(--accent-primary);
   text-decoration: none;
+  transition: color 0.2s;
 }
+a:hover {
+  color: var(--accent-secondary);
+}
+
 header, footer {
-  background: var(--accent);
+  background: var(--accent-primary);
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 0;
 }
+
+header .container, footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 1rem;
+  font-weight: 600;
+  position: relative;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.2s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+main.container {
+  padding: 2rem 0;
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
 .recipe-summary {
-  border-left: 4px solid var(--accent);
-  background: #f9f9f9;
+  border-left: 4px solid var(--accent-primary);
+  background: var(--accent-secondary);
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
 }
