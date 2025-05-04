@@ -1,0 +1,24 @@
+---
+layout: default
+title: Recipes
+---
+
+<div class="py-4">
+  <h2 class="mb-4">All Recipes</h2>
+  <div class="row">
+    {% for recipe in site.recipes %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        {% if recipe.image %}
+        <img src="{{ recipe.image | relative_url }}" class="card-img-top" alt="{{ recipe.title }}">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{ recipe.url | relative_url }}">{{ recipe.title }}</a>
+          </h5>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
